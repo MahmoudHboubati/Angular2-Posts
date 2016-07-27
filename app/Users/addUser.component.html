@@ -1,0 +1,42 @@
+<form [ngFormModel]="form">
+    <fieldset>
+        <legend>User</legend>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" #name="ngForm" ngControl="name" type="text" class="form-control">
+            <div *ngIf="name.touched && name.errors">
+                <div class="alert alert-danger" *ngIf="name.errors.required">Name is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input id="phone" type="text" class="form-control">
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Adress</legend>
+        <div class="form-group">
+            <div class="form-group">
+                <label for="street">Street</label>
+                <input id="street" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="suite">Suite</label>
+                <input id="suite" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input id="city" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="zipCode">ZipCode</label>
+                <input id="zipCode" type="text" class="form-control">
+            </div>
+        </div>
+    </fieldset>
+    <button type="submit" class="btn btn-default">Save</button>
+</form>
